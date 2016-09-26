@@ -1,0 +1,29 @@
+<html>
+<body>
+<form action="/Data.asp" method="post">
+<input type="text" name="btnEdta">
+<input type="submit" value="EnterData" class="button">
+</form>
+
+
+<%
+dim edta,sqlins
+edta = request.form("btnedta")
+
+
+set conn=server.createobject("ADODB.Connection")
+conn.provider="Microsoft.Jet.OLEDB.4.0"
+conn.open="c:\inetpub\wwwroot\data.mdb"
+
+sqlset="insert into datatab (tbid, tbuser,tbstmp,tbdata,tbflag,tbcmts) values(1,'A',11,'" & edta & "','Y','Nothing')"
+
+conn.execute sqlset,recaffected
+
+
+'set rs=server.createobject("ADODB.recordset")
+'rs.open "select * from datatab",conn
+
+response.write(edta)
+%>
+</body>
+</html>
