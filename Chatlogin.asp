@@ -21,7 +21,7 @@ Session("Username")=""
 vUsr = Request.form("txtusr")
 vPass = Request.form("txtpass")
 
-if (vUsr = "Rajesh" or vUsr = "Sindhu") and vPass = "bowbow" then
+if (vUsr = "Rajesh" or vUsr = "Sindhu") and vPass = "test" then
 	Session("Username")=vUsr
 	Response.redirect ("/WubbyTalk/Data.asp")
 else
